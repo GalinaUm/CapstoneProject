@@ -58,14 +58,12 @@ class User(AbstractUser):
             "unique": "Пользователь с такой почтой уже существует.",
         },
     )
-
     role = models.CharField(
         max_length=10,
         choices=ROLE_CHOICES,
         default=USER,
         verbose_name="Роль"
     )
-
     image =  models.ImageField(
         upload_to="users/images",
         blank=True,
