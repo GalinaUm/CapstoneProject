@@ -148,3 +148,8 @@ CACHES = {
         'LOCATION': 'redis://127.0.0.1:6379/1',
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+PASSWORD_RESET_CONFIRM_URL = "http://localhost:3000/password-reset-confirm/{uid}/{token}/"
+
