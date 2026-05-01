@@ -6,6 +6,9 @@ from .models import Ad, Review
 from .serializers import AdSerializer, AdDetailSerializer, ReviewSerializer
 from .filters import AdFilter
 
+from .permissions import IsOwnerOrAdmin
+from rest_framework.permissions import AllowAny, IsAuthenticated
+
 class AdViewSet(ModelViewSet):
     queryset = Ad.objects.all()
 
@@ -19,6 +22,12 @@ class AdViewSet(ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
+
+    def get_permissions(self):
+        if self.action == "list":
+            return [AllowAny()]
+
+        return [IsAuthenticated(), IsOwnerOrAdmin()]
 
 
 class ReviewViewSet(ModelViewSet):

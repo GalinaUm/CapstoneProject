@@ -13,13 +13,13 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView,
 
 from users.models import User
 from users.serializers import PasswordResetRequestSerializer, PasswordResetConfirmSerializer, UserSerializer
-from .permissions import IsOwner
+from ads.permissions import IsOwnerOrAdmin
 
 
 class UserListAPIView(ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 class UserCreateAPIView(CreateAPIView):
     queryset = User.objects.all()
@@ -29,17 +29,17 @@ class UserCreateAPIView(CreateAPIView):
 class UserRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsOwner | IsAdminUser]
+    permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 class UserUpdateAPIView(UpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsOwner]
+    permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 class UserDestroyAPIView(DestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsOwner]
+    permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 class UserProfileAPIView(RetrieveUpdateAPIView):
     serializer_class = UserSerializer
