@@ -153,3 +153,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 PASSWORD_RESET_CONFIRM_URL = "http://localhost:3000/password-reset-confirm/{uid}/{token}/"
 
+SWAGGER_USE_COMPAT_RENDERERS = False

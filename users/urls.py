@@ -28,9 +28,9 @@ urlpatterns = [
 
     path("me/", UserProfileAPIView.as_view(), name="user_me"),
 
-    path("<int:pk>/", UserRetrieveAPIView.as_view(), name="user-detail"),
-    path("update/<int:pk>/", UserUpdateAPIView.as_view(), name="user-update"),
-    path("delete/<int:pk>/", UserDestroyAPIView.as_view(), name="user-delete"),
+    path("<int:pk>/", UserRetrieveAPIView.as_view(), name="user_detail"),
+    path("update/<int:pk>/", UserUpdateAPIView.as_view(), name="user_update"),
+    path("delete/<int:pk>/", UserDestroyAPIView.as_view(), name="user_delete"),
 
     path(
         "reset_password/",
