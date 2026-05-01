@@ -1,10 +1,16 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions
+from django_filters.rest_framework import DjangoFilterBackend
+
 from .models import Ad, Review
 from .serializers import AdSerializer, AdDetailSerializer, ReviewSerializer
+from .filters import AdFilter
 
 class AdViewSet(ModelViewSet):
     queryset = Ad.objects.all()
+
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = AdFilter
 
     def get_serializer_class(self):
         if self.action == "retrieve":
