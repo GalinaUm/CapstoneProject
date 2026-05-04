@@ -21,6 +21,8 @@ class IsOwnerOrAdmin(permissions.BasePermission):
         return hasattr(obj, 'author') and obj.author == request.user
 
     def has_permission(self, request, view):
-        if view.action == 'list' or isinstance(view, ListAPIView):
+        action = getattr(view, "action", None)
+
+        if action == 'list' or isinstance(view, ListAPIView):
             return request.user.is_authenticated and request.user.role == 'admin'
         return request.user.is_authenticated

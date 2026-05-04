@@ -3,6 +3,7 @@ from .models import Ad, Review
 
 class ReviewSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.email')
+    ad = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Review
@@ -16,7 +17,7 @@ class AdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ad
-        fields = ('id', 'image', 'title', 'price', 'author', 'created_at', 'reviews_count')
+        fields = ('id', 'image', 'title', 'price', 'description', 'author', 'created_at', 'reviews_count')
 
 
 class AdDetailSerializer(serializers.ModelSerializer):

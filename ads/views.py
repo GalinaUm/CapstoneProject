@@ -1,4 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.exceptions import ValidationError
 from rest_framework import permissions
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -44,6 +45,12 @@ class ReviewViewSet(ModelViewSet):
 
     def perform_create(self, serializer):
         ad_id = self.kwargs.get("ad_id")
+
+        if Review.objects.filter(ad_id=ad_id, author=self.request.user).exists():
+            raise ValidationError(
+                {"detail": "Вы уже оставляли отзыв на это объявление."}
+            )
+
         serializer.save(
             author=self.request.user,
             ad_id=ad_id,
