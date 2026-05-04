@@ -10,8 +10,8 @@ class AdFilter(filters.FilterSet):
 
     author = filters.CharFilter(field_name='author__email', lookup_expr='icontains')
 
-    created_after = filters.DateTimeFilter(field_name='created_date', lookup_expr='gte')
-    created_before = filters.DateTimeFilter(field_name='created_date', lookup_expr='lte')
+    created_after = filters.DateTimeFilter(field_name='created_at', lookup_expr='gte')
+    created_before = filters.DateTimeFilter(field_name='created_at', lookup_expr='lte')
 
     class Meta:
         model = Ad
