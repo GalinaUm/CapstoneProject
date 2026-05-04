@@ -2,6 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import permissions
 from django_filters.rest_framework import DjangoFilterBackend
 
+from .paginators import AdPagination
 from .models import Ad, Review
 from .serializers import AdSerializer, AdDetailSerializer, ReviewSerializer
 from .filters import AdFilter
@@ -10,6 +11,7 @@ from .permissions import IsOwnerOrAdmin
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 class AdViewSet(ModelViewSet):
+    pagination_class = AdPagination
     queryset = Ad.objects.all()
 
     filter_backends = (DjangoFilterBackend,)
