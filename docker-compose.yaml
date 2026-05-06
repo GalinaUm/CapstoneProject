@@ -43,6 +43,7 @@ services:
     env_file:
       - .env
     environment:
+      - IS_DOCKER=1
       - HOST=db
     command: >
       sh -c "python manage.py migrate &&

@@ -77,7 +77,13 @@ REST_FRAMEWORK = {
 }
 
 
-DB_HOST = "localhost" if "pytest" in sys.modules else os.getenv("HOST")
+IS_TESTING = "pytest" in sys.modules
+IS_DOCKER = os.getenv("IS_DOCKER") == "1"
+
+DB_HOST = "db" if IS_DOCKER else "localhost"
+
+if IS_TESTING:
+    DB_HOST = "localhost"
 
 DATABASES = {
     "default": {
