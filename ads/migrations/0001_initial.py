@@ -15,20 +15,70 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Ad',
+            name="Ad",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(help_text='Укажите заголовок', max_length=200, verbose_name='Заголовок')),
-                ('price', models.PositiveIntegerField(default=0, help_text='Укажите цену', verbose_name='Цена')),
-                ('description', models.TextField(blank=True, help_text='Укажите описание', max_length=1000, null=True, verbose_name='Описание')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')),
-                ('image', models.ImageField(blank=True, null=True, upload_to='ads/images/', verbose_name='Изображение')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='ads', to=settings.AUTH_USER_MODEL, verbose_name='Автор')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        help_text="Укажите заголовок",
+                        max_length=200,
+                        verbose_name="Заголовок",
+                    ),
+                ),
+                (
+                    "price",
+                    models.PositiveIntegerField(
+                        default=0, help_text="Укажите цену", verbose_name="Цена"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(
+                        blank=True,
+                        help_text="Укажите описание",
+                        max_length=1000,
+                        null=True,
+                        verbose_name="Описание",
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Дата создания"
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="ads/images/",
+                        verbose_name="Изображение",
+                    ),
+                ),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="ads",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Автор",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Объявление',
-                'verbose_name_plural': 'Объявления',
-                'ordering': ('-created_at',),
+                "verbose_name": "Объявление",
+                "verbose_name_plural": "Объявления",
+                "ordering": ("-created_at",),
             },
         ),
     ]

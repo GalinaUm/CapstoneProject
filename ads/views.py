@@ -1,15 +1,15 @@
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.exceptions import ValidationError
-from rest_framework import permissions
 from django_filters.rest_framework import DjangoFilterBackend
-
-from .paginators import AdPagination
-from .models import Ad, Review
-from .serializers import AdSerializer, AdDetailSerializer, ReviewSerializer
-from .filters import AdFilter
-
-from .permissions import IsOwnerOrAdmin
+from rest_framework import permissions
+from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.viewsets import ModelViewSet
+
+from .filters import AdFilter
+from .models import Ad, Review
+from .paginators import AdPagination
+from .permissions import IsOwnerOrAdmin
+from .serializers import AdDetailSerializer, AdSerializer, ReviewSerializer
+
 
 class AdViewSet(ModelViewSet):
     pagination_class = AdPagination
@@ -54,4 +54,4 @@ class ReviewViewSet(ModelViewSet):
         serializer.save(
             author=self.request.user,
             ad_id=ad_id,
-            )
+        )

@@ -1,19 +1,28 @@
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.utils.encoding import force_bytes, force_str
-from django.core.mail import send_mail
 from django.conf import settings
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from rest_framework import status
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
-from rest_framework.generics import ListAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, CreateAPIView, \
-    RetrieveUpdateAPIView
+from rest_framework.generics import (
+    CreateAPIView,
+    DestroyAPIView,
+    ListAPIView,
+    RetrieveAPIView,
+    RetrieveUpdateAPIView,
+    UpdateAPIView,
+)
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
-from users.models import User
-from users.serializers import PasswordResetRequestSerializer, PasswordResetConfirmSerializer, UserSerializer
 from ads.permissions import IsOwnerOrAdmin
+from users.models import User
+from users.serializers import (
+    PasswordResetConfirmSerializer,
+    PasswordResetRequestSerializer,
+    UserSerializer,
+)
 
 
 class UserListAPIView(ListAPIView):
@@ -21,25 +30,30 @@ class UserListAPIView(ListAPIView):
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
+
 class UserCreateAPIView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
 
 class UserRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
+
 class UserUpdateAPIView(UpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
+
 class UserDestroyAPIView(DestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
+
 
 class UserProfileAPIView(RetrieveUpdateAPIView):
     serializer_class = UserSerializer
@@ -48,6 +62,7 @@ class UserProfileAPIView(RetrieveUpdateAPIView):
     def get_object(self):
         return self.request.user
 
+
 class PasswordResetRequestView(APIView):
     permission_classes = [AllowAny]
 
@@ -55,7 +70,7 @@ class PasswordResetRequestView(APIView):
         serializer = PasswordResetRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        email = serializer.validated_data['email']
+        email = serializer.validated_data["email"]
         user = User.objects.filter(email=email).first()
 
         if user:
@@ -70,7 +85,9 @@ class PasswordResetRequestView(APIView):
                 [user.email],
             )
 
-        return Response({"detail": "Инструкции отправлены на почту."}, status=status.HTTP_200_OK)
+        return Response(
+            {"detail": "Инструкции отправлены на почту."}, status=status.HTTP_200_OK
+        )
 
 
 class PasswordResetConfirmView(APIView):
@@ -80,9 +97,9 @@ class PasswordResetConfirmView(APIView):
         serializer = PasswordResetConfirmSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        uid = serializer.validated_data['uid']
-        token = serializer.validated_data['token']
-        new_password = serializer.validated_data['new_password']
+        uid = serializer.validated_data["uid"]
+        token = serializer.validated_data["token"]
+        new_password = serializer.validated_data["new_password"]
 
         try:
             user_id = force_str(urlsafe_base64_decode(uid))
@@ -95,6 +112,6 @@ class PasswordResetConfirmView(APIView):
             user.save()
             return Response({"detail": "Пароль изменен."}, status=status.HTTP_200_OK)
 
-        return Response({"error": "Неверный токен или ID."}, status=status.HTTP_400_BAD_REQUEST)
-
-
+        return Response(
+            {"error": "Неверный токен или ID."}, status=status.HTTP_400_BAD_REQUEST
+        )

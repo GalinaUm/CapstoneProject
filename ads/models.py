@@ -1,7 +1,6 @@
 from django.conf import settings
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
-from django.utils.html import format_html
 
 
 class Ad(models.Model):
@@ -33,10 +32,7 @@ class Ad(models.Model):
         verbose_name="Дата создания",
     )
     image = models.ImageField(
-        upload_to="ads/images/",
-        null=True,
-        blank=True,
-        verbose_name="Изображение"
+        upload_to="ads/images/", null=True, blank=True, verbose_name="Изображение"
     )
 
     class Meta:
@@ -46,6 +42,7 @@ class Ad(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class Review(models.Model):
     text = models.TextField(
@@ -80,6 +77,5 @@ class Review(models.Model):
     class Meta:
         verbose_name = "Отзыв"
         verbose_name_plural = "Отзывы"
-        unique_together = ('ad', 'author')
+        unique_together = ("ad", "author")
         ordering = ("-created_at",)
-

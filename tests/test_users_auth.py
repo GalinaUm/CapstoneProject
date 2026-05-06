@@ -8,7 +8,7 @@ from users.models import User
 @pytest.mark.django_db
 class TestUserAuth:
     def test_user_registration(self, api_client):
-        url = reverse('users:user_create')
+        url = reverse("users:user_create")
 
         data = {
             "email": "new@test.com",
@@ -18,7 +18,7 @@ class TestUserAuth:
             "phone": "+79281889581",
         }
 
-        response = api_client.post(url, data, format='json')
+        response = api_client.post(url, data, format="json")
 
         assert response.status_code == status.HTTP_201_CREATED
         assert User.objects.filter(email="new@test.com").exists()
@@ -29,7 +29,7 @@ class TestUserAuth:
         assert user.role == User.USER
 
     def test_user_cannot_register_as_admin(self, api_client):
-        url = reverse('users:user_create')
+        url = reverse("users:user_create")
 
         data = {
             "email": "hacker@test.com",
@@ -37,7 +37,7 @@ class TestUserAuth:
             "role": User.ADMIN,
         }
 
-        response = api_client.post(url, data, format='json')
+        response = api_client.post(url, data, format="json")
 
         assert response.status_code == status.HTTP_201_CREATED
 
@@ -46,15 +46,12 @@ class TestUserAuth:
         assert user.role == User.USER
 
     def test_user_login_by_jwt(self, api_client, user):
-        url = reverse('users:login')
+        url = reverse("users:login")
 
         response = api_client.post(
             url,
-            {
-                'email': 'user@test.com',
-                'password': 'userpassword123'
-            },
-            format='json'
+            {"email": "user@test.com", "password": "userpassword123"},
+            format="json",
         )
 
         assert response.status_code == status.HTTP_200_OK
@@ -62,7 +59,7 @@ class TestUserAuth:
         assert "refresh" in response.data
 
     def test_get_me_authenticated(self, auth_client, user):
-        url = reverse('users:user_me')
+        url = reverse("users:user_me")
 
         response = auth_client.get(url)
 
@@ -70,19 +67,19 @@ class TestUserAuth:
         assert response.data["email"] == user.email
 
     def test_get_me_anonymous_denied(self, api_client):
-        url = reverse('users:user_me')
+        url = reverse("users:user_me")
 
         response = api_client.get(url)
 
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
     def test_user_can_change_password(self, auth_client, user):
-        url = reverse('users:user_me')
+        url = reverse("users:user_me")
 
         response = auth_client.patch(
             url,
-            {'password': 'newstrongpassword123!'},
-            format='json',
+            {"password": "newstrongpassword123!"},
+            format="json",
         )
 
         assert response.status_code == status.HTTP_200_OK
@@ -91,19 +88,21 @@ class TestUserAuth:
 
         assert user.check_password("newstrongpassword123!")
 
-    def test_password_reset_request_existing_email(self, api_client, user, settings, mocker):
+    def test_password_reset_request_existing_email(
+        self, api_client, user, settings, mocker
+    ):
         settings.PASSWORD_RESET_CONFIRM_URL = "http://test/reset/{uid}/{token}/"
 
-        mocked_send_mail = mocker.patch('users.views.send_mail')
+        mocked_send_mail = mocker.patch("users.views.send_mail")
 
-        url = reverse('users:reset_password')
+        url = reverse("users:reset_password")
 
         response = api_client.post(
             url,
             {
-                'email': user.email,
+                "email": user.email,
             },
-            format='json',
+            format="json",
         )
 
         assert response.status_code == status.HTTP_200_OK
@@ -111,23 +110,20 @@ class TestUserAuth:
         mocked_send_mail.assert_called_once()
 
     def test_password_reset_request_unknown_email_does_not_send_mail(
-            self,
-            api_client,
-            settings,
-            mocker
+        self, api_client, settings, mocker
     ):
         settings.PASSWORD_RESET_CONFIRM_URL = "http://test/reset/{uid}/{token}/"
 
-        mocked_send_mail = mocker.patch('users.views.send_mail')
+        mocked_send_mail = mocker.patch("users.views.send_mail")
 
-        url = reverse('users:reset_password')
+        url = reverse("users:reset_password")
 
         response = api_client.post(
             url,
             {
-                'email': 'unknown@test.com',
+                "email": "unknown@test.com",
             },
-            format='json',
+            format="json",
         )
 
         assert response.status_code == status.HTTP_200_OK

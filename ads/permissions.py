@@ -10,7 +10,7 @@ class IsOwnerOrAdmin(permissions.BasePermission):
     """
 
     def has_object_permission(self, request, view, obj):
-        is_admin = request.user.is_authenticated and request.user.role == 'admin'
+        is_admin = request.user.is_authenticated and request.user.role == "admin"
 
         if is_admin:
             return True
@@ -18,11 +18,11 @@ class IsOwnerOrAdmin(permissions.BasePermission):
         if obj == request.user:
             return True
 
-        return hasattr(obj, 'author') and obj.author == request.user
+        return hasattr(obj, "author") and obj.author == request.user
 
     def has_permission(self, request, view):
         action = getattr(view, "action", None)
 
-        if action == 'list' or isinstance(view, ListAPIView):
-            return request.user.is_authenticated and request.user.role == 'admin'
+        if action == "list" or isinstance(view, ListAPIView):
+            return request.user.is_authenticated and request.user.role == "admin"
         return request.user.is_authenticated

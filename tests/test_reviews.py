@@ -1,6 +1,6 @@
 import pytest
-from rest_framework import status
 from django.urls import reverse
+from rest_framework import status
 
 from ads.models import Review
 
@@ -64,7 +64,9 @@ class TestReview:
 
         assert response.status_code == status.HTTP_400_BAD_REQUEST
 
-    def test_user_cannot_create_second_review_for_same_ad(self, auth_client, ad, review):
+    def test_user_cannot_create_second_review_for_same_ad(
+        self, auth_client, ad, review
+    ):
         url = reverse("ads:review-list", kwargs={"ad_id": ad.pk})
         data = {
             "text": "Second review",
@@ -91,4 +93,3 @@ class TestReview:
 
         assert created_review.author == user
         assert created_review.author != other_user
-

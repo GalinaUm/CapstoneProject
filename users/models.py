@@ -59,12 +59,9 @@ class User(AbstractUser):
         },
     )
     role = models.CharField(
-        max_length=10,
-        choices=ROLE_CHOICES,
-        default=USER,
-        verbose_name="Роль"
+        max_length=10, choices=ROLE_CHOICES, default=USER, verbose_name="Роль"
     )
-    image =  models.ImageField(
+    image = models.ImageField(
         upload_to="users/images/",
         blank=True,
         null=True,
