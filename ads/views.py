@@ -1,5 +1,4 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import permissions
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
@@ -64,11 +63,13 @@ class ReviewViewSet(ModelViewSet):
     """
     ViewSet для работы с отзывами.
 
-    Поддерживает CRUD-операции для отзывов.
+    Доступ:
+    - list/retrieve: доступны всем пользователям
+    - create/update/delete: только авторизованным
+    - update/delete: только автор отзыва или администратор
     """
 
     serializer_class = ReviewSerializer
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
         """
@@ -82,12 +83,27 @@ class ReviewViewSet(ModelViewSet):
             return Review.objects.filter(ad_id=ad_id)
         return Review.objects.all()
 
+    def get_permissions(self):
+        """
+        Возвращает permissions в зависимости от action.
+
+        Читать отзывы могут все.
+        Создавать, редактировать и удалять могут только авторизованные пользователи.
+        """
+
+        if self.action in ["list", "retrieve"]:
+            return [AllowAny()]
+
+        return [IsAuthenticated(), IsOwnerOrAdmin()]
+
     def perform_create(self, serializer):
         """
-        Создает отзыв и автоматически назначает:
-        - автора
-        - объявление
+        Создает отзыв и автоматически назначает автора и объявление.
+
+        Также запрещает пользователю оставлять второй отзыв
+        на одно и то же объявление.
         """
+
         ad_id = self.kwargs.get("ad_id")
 
         if Review.objects.filter(ad_id=ad_id, author=self.request.user).exists():
