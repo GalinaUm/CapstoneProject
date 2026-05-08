@@ -26,47 +26,67 @@ from users.serializers import (
 
 
 class UserListAPIView(ListAPIView):
+    """Получение списка пользователей."""
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 
 class UserCreateAPIView(CreateAPIView):
+    """Регистрация пользователя."""
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
 
 
 class UserRetrieveAPIView(RetrieveAPIView):
+    """Получение пользователя по ID."""
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 
 class UserUpdateAPIView(UpdateAPIView):
+    """Обновление пользователя."""
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 
 class UserDestroyAPIView(DestroyAPIView):
+    """Удаление пользователя."""
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated, IsOwnerOrAdmin]
 
 
 class UserProfileAPIView(RetrieveUpdateAPIView):
+    """
+    Просмотр и обновление собственного профиля.
+    """
+
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
+        """Возвращает текущего пользователя."""
         return self.request.user
 
 
 class PasswordResetRequestView(APIView):
+    """Запрос восстановления пароля."""
+
     permission_classes = [AllowAny]
 
     def post(self, request):
+        """
+        Отправляет ссылку восстановления пароля на email.
+        """
         serializer = PasswordResetRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
@@ -91,9 +111,14 @@ class PasswordResetRequestView(APIView):
 
 
 class PasswordResetConfirmView(APIView):
+    """Подтверждение восстановления пароля."""
+
     permission_classes = [AllowAny]
 
     def post(self, request):
+        """
+        Проверяет токен и устанавливает новый пароль.
+        """
         serializer = PasswordResetConfirmSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 

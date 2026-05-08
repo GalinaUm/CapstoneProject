@@ -6,6 +6,8 @@ from users.models import User
 
 
 class UserSerializer(ModelSerializer):
+    """Сериализатор пользователя."""
+
     password = serializers.CharField(
         write_only=True, required=False, validators=[validate_password]
     )
@@ -25,9 +27,11 @@ class UserSerializer(ModelSerializer):
         read_only_fields = ("role",)
 
     def create(self, validated_data):
+        """Создает пользователя с хешированием пароля."""
         return User.objects.create_user(**validated_data)
 
     def update(self, instance, validated_data):
+        """Обновляет пользователя и корректно изменяет пароль."""
         password = validated_data.pop("password", None)
         if password:
             instance.set_password(password)
@@ -35,10 +39,14 @@ class UserSerializer(ModelSerializer):
 
 
 class PasswordResetRequestSerializer(serializers.Serializer):
+    """Сериализатор запроса восстановления пароля."""
+
     email = serializers.EmailField()
 
 
 class PasswordResetConfirmSerializer(serializers.Serializer):
+    """Сериализатор подтверждения восстановления пароля."""
+
     uid = serializers.CharField()
     token = serializers.CharField()
     new_password = serializers.CharField(

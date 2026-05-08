@@ -4,6 +4,8 @@ from django.db import models
 
 
 class Ad(models.Model):
+    """Модель объявления."""
+
     title = models.CharField(
         max_length=200,
         verbose_name="Заголовок",
@@ -41,10 +43,14 @@ class Ad(models.Model):
         ordering = ("-created_at",)
 
     def __str__(self):
+        """Возвращает заголовок объявления."""
+
         return self.title
 
 
 class Review(models.Model):
+    """Модель отзыва к объявлению."""
+
     text = models.TextField(
         max_length=1000,
         verbose_name="Текст отзыва",
@@ -79,3 +85,8 @@ class Review(models.Model):
         verbose_name_plural = "Отзывы"
         unique_together = ("ad", "author")
         ordering = ("-created_at",)
+
+        def __str__(self):
+            """Возвращает строковое представление отзыва."""
+
+            return f"{self.author} -> {self.ad}"
