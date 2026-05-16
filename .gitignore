@@ -23,6 +23,6 @@ venv
 .idea
 *.pyc
 .coverage
-htmlcov/
+#htmlcov/
 postgres_data/
 redis_data/

@@ -1,0 +1,350 @@
+[
+{
+    "model": "ads.ad",
+    "pk": 1,
+    "fields": {
+        "title": "iPhone 13 Pro 128GB",
+        "price": 65000,
+        "description": "Телефон в отличном состоянии.",
+        "author": 1,
+        "created_at": "2026-05-16T17:20:08.814Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 2,
+    "fields": {
+        "title": "MacBook Air M1",
+        "price": 89000,
+        "description": "Ноутбук для работы и учебы.",
+        "author": 1,
+        "created_at": "2026-05-16T17:20:08.839Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 3,
+    "fields": {
+        "title": "PlayStation 5",
+        "price": 52000,
+        "description": "Полный комплект, два геймпада.",
+        "author": 1,
+        "created_at": "2026-05-16T17:20:08.841Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 4,
+    "fields": {
+        "title": "Samsung Odyssey Monitor",
+        "price": 27000,
+        "description": "Игровой монитор 144Hz.",
+        "author": 1,
+        "created_at": "2026-05-16T17:20:08.843Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 5,
+    "fields": {
+        "title": "GoPro Hero 11",
+        "price": 31000,
+        "description": "Экшн-камера почти новая.",
+        "author": 1,
+        "created_at": "2026-05-16T17:20:08.844Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 6,
+    "fields": {
+        "title": "Xiaomi Scooter",
+        "price": 24000,
+        "description": "Электросамокат с хорошей батареей.",
+        "author": 2,
+        "created_at": "2026-05-16T17:20:08.846Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 7,
+    "fields": {
+        "title": "Canon EOS 80D",
+        "price": 47000,
+        "description": "Фотоаппарат с объективом.",
+        "author": 2,
+        "created_at": "2026-05-16T17:20:08.847Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 8,
+    "fields": {
+        "title": "Gaming Chair",
+        "price": 15000,
+        "description": "Игровое кресло в хорошем состоянии.",
+        "author": 2,
+        "created_at": "2026-05-16T17:20:08.849Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 9,
+    "fields": {
+        "title": "RTX 3070",
+        "price": 43000,
+        "description": "Видеокарта без майнинга.",
+        "author": 2,
+        "created_at": "2026-05-16T17:20:08.851Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 10,
+    "fields": {
+        "title": "Yamaha Guitar",
+        "price": 18000,
+        "description": "Акустическая гитара.",
+        "author": 3,
+        "created_at": "2026-05-16T17:20:08.852Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 11,
+    "fields": {
+        "title": "Office Desk",
+        "price": 12000,
+        "description": "Компьютерный стол.",
+        "author": 3,
+        "created_at": "2026-05-16T17:20:08.854Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 12,
+    "fields": {
+        "title": "Apple Watch Series 8",
+        "price": 29000,
+        "description": "Смарт-часы Apple.",
+        "author": 3,
+        "created_at": "2026-05-16T17:20:08.855Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 13,
+    "fields": {
+        "title": "Coffee Machine",
+        "price": 9000,
+        "description": "Кофемашина для дома.",
+        "author": 4,
+        "created_at": "2026-05-16T17:20:08.856Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 14,
+    "fields": {
+        "title": "LG TV 55",
+        "price": 38000,
+        "description": "Телевизор 4K UHD.",
+        "author": 4,
+        "created_at": "2026-05-16T17:20:08.858Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 15,
+    "fields": {
+        "title": "Bicycle Trek",
+        "price": 26000,
+        "description": "Горный велосипед.",
+        "author": 5,
+        "created_at": "2026-05-16T17:20:08.859Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 16,
+    "fields": {
+        "title": "AirPods Pro",
+        "price": 14000,
+        "description": "Наушники Apple.",
+        "author": 5,
+        "created_at": "2026-05-16T17:20:08.861Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 17,
+    "fields": {
+        "title": "Mechanical Keyboard",
+        "price": 7000,
+        "description": "Клавиатура RGB.",
+        "author": 6,
+        "created_at": "2026-05-16T17:20:08.862Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 18,
+    "fields": {
+        "title": "Dell Ultrasharp",
+        "price": 22000,
+        "description": "Монитор для дизайна.",
+        "author": 6,
+        "created_at": "2026-05-16T17:20:08.863Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 19,
+    "fields": {
+        "title": "DJI Mini 3",
+        "price": 56000,
+        "description": "Квадрокоптер DJI.",
+        "author": 7,
+        "created_at": "2026-05-16T17:20:08.864Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 20,
+    "fields": {
+        "title": "Nintendo Switch",
+        "price": 21000,
+        "description": "Игровая приставка.",
+        "author": 7,
+        "created_at": "2026-05-16T17:20:08.865Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 21,
+    "fields": {
+        "title": "Asus Zenbook",
+        "price": 64000,
+        "description": "Ультрабук Asus.",
+        "author": 8,
+        "created_at": "2026-05-16T17:20:08.866Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 22,
+    "fields": {
+        "title": "Kindle Paperwhite",
+        "price": 8500,
+        "description": "Электронная книга.",
+        "author": 8,
+        "created_at": "2026-05-16T17:20:08.867Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 23,
+    "fields": {
+        "title": "Marshall Speaker",
+        "price": 17000,
+        "description": "Bluetooth колонка.",
+        "author": 9,
+        "created_at": "2026-05-16T17:20:08.868Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 24,
+    "fields": {
+        "title": "iPad Air",
+        "price": 39000,
+        "description": "Планшет Apple.",
+        "author": 9,
+        "created_at": "2026-05-16T17:20:08.870Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 25,
+    "fields": {
+        "title": "MSI Gaming Laptop",
+        "price": 97000,
+        "description": "Игровой ноутбук.",
+        "author": 10,
+        "created_at": "2026-05-16T17:20:08.871Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 26,
+    "fields": {
+        "title": "Sony WH-1000XM5",
+        "price": 24000,
+        "description": "Премиальные наушники.",
+        "author": 10,
+        "created_at": "2026-05-16T17:20:08.871Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 27,
+    "fields": {
+        "title": "Server Rack",
+        "price": 45000,
+        "description": "Серверная стойка 42U.",
+        "author": 11,
+        "created_at": "2026-05-16T17:20:08.872Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 28,
+    "fields": {
+        "title": "Cisco Switch",
+        "price": 35000,
+        "description": "Управляемый коммутатор Cisco.",
+        "author": 11,
+        "created_at": "2026-05-16T17:20:08.873Z",
+        "image": ""
+    }
+},
+{
+    "model": "ads.ad",
+    "pk": 29,
+    "fields": {
+        "title": "Dell PowerEdge",
+        "price": 125000,
+        "description": "Сервер Dell для дата-центра.",
+        "author": 11,
+        "created_at": "2026-05-16T17:20:08.875Z",
+        "image": ""
+    }
+}
+]
