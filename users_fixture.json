@@ -1,0 +1,222 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$tMibRxQSfBpeXHB2XxaTU2$NHQ+nKtQ6U/uREffTCUZeF3kxq6nQRI9zkWYnRRP32w=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:20.157Z",
+        "first_name": "User1",
+        "last_name": null,
+        "phone": null,
+        "email": "user1@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$ciu2EzRjHyuYVrX6vg4UrS$Ua/uBm38x9RtVSH7SpmLCLA07irlMUVNc1cTostuXvI=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:21.830Z",
+        "first_name": "User2",
+        "last_name": null,
+        "phone": null,
+        "email": "user2@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$XRUcb8ibbwgVal6FUBEsGJ$zIgLV7PmkHnNR/KKtMUe6QI+7zbcD2Zvqlpus0qd4Po=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:23.259Z",
+        "first_name": "User3",
+        "last_name": null,
+        "phone": null,
+        "email": "user3@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$F0NjtpGAv0I4XIOF2PXlku$NwG8syywFTWuQcObL8FyVBCV/dOA+1EoFdtq7QkDcnA=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:24.670Z",
+        "first_name": "User4",
+        "last_name": null,
+        "phone": null,
+        "email": "user4@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$pSHstJYMyphlApIwvAj3ae$x9JwCT3IR9ak5vBXEfAajyTNjzEycQHAn8bJ/WD/W6g=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:26.070Z",
+        "first_name": "User5",
+        "last_name": null,
+        "phone": null,
+        "email": "user5@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$kMVKAECXPpmZkw8kATDhxy$e9hWPhkYwhz9qGJERIlNw19blSLVN3H9OIvzAs/Ppxo=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:27.471Z",
+        "first_name": "User6",
+        "last_name": null,
+        "phone": null,
+        "email": "user6@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$hhsODtdq74efo8ojiMLk5U$SDbf4x+iXOH9NtGj3/apWJUI1anGLsvhxlgKPoWPsws=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:29.000Z",
+        "first_name": "User7",
+        "last_name": null,
+        "phone": null,
+        "email": "user7@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$MU5SFw1jWGAJkRivx9SLmF$hSrm5jX0ou/Tx3s3c+DK7Ci1J7LpAmm40gKnt7SqrC8=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:30.501Z",
+        "first_name": "User8",
+        "last_name": null,
+        "phone": null,
+        "email": "user8@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$GBoy90Nip8VgwVYVUNhpU5$N039B5e/QiW5ABu1tZ1FlNet7IMKbQNBnNqKMDXTOHM=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:31.902Z",
+        "first_name": "User9",
+        "last_name": null,
+        "phone": null,
+        "email": "user9@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$Cpz3KOm2aYquWC0TSPjNGj$0JT3dzC+YifX8anggR25ayOXiqZo+QkJe30ii/N1E9A=",
+        "last_login": null,
+        "is_superuser": false,
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:33.304Z",
+        "first_name": "User10",
+        "last_name": null,
+        "phone": null,
+        "email": "user10@test.com",
+        "role": "user",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$sbgkzAYrmTSyMN1TSNxKc9$S/TeRBSH2neH2LSLPV+wSixBY3ucK3PW0/UUopWGexQ=",
+        "last_login": null,
+        "is_superuser": true,
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-05-16T17:08:52.349Z",
+        "first_name": "Admin",
+        "last_name": "SkyPro",
+        "phone": null,
+        "email": "admin@sky.pro",
+        "role": "admin",
+        "image": "",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

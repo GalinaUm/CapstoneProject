@@ -1,0 +1,244 @@
+[
+{
+    "model": "ads.review",
+    "pk": 1,
+    "fields": {
+        "text": "Отличное объявление, все соответствует описанию.",
+        "author": 2,
+        "ad": 1,
+        "created_at": "2026-05-16T17:23:34.035Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 2,
+    "fields": {
+        "text": "Продавец быстро ответил и все объяснил.",
+        "author": 3,
+        "ad": 1,
+        "created_at": "2026-05-16T17:23:34.060Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 3,
+    "fields": {
+        "text": "Очень хороший ноутбук.",
+        "author": 4,
+        "ad": 2,
+        "created_at": "2026-05-16T17:23:34.061Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 4,
+    "fields": {
+        "text": "Цена немного высокая, но состояние отличное.",
+        "author": 5,
+        "ad": 2,
+        "created_at": "2026-05-16T17:23:34.063Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 5,
+    "fields": {
+        "text": "Все работает идеально.",
+        "author": 6,
+        "ad": 3,
+        "created_at": "2026-05-16T17:23:34.065Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 6,
+    "fields": {
+        "text": "Очень доволен покупкой.",
+        "author": 7,
+        "ad": 3,
+        "created_at": "2026-05-16T17:23:34.066Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 7,
+    "fields": {
+        "text": "Монитор супер для игр.",
+        "author": 8,
+        "ad": 4,
+        "created_at": "2026-05-16T17:23:34.068Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 8,
+    "fields": {
+        "text": "Хорошее качество изображения.",
+        "author": 9,
+        "ad": 4,
+        "created_at": "2026-05-16T17:23:34.070Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 9,
+    "fields": {
+        "text": "Камера почти как новая.",
+        "author": 10,
+        "ad": 5,
+        "created_at": "2026-05-16T17:23:34.071Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 10,
+    "fields": {
+        "text": "Все понравилось.",
+        "author": 11,
+        "ad": 5,
+        "created_at": "2026-05-16T17:23:34.073Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 11,
+    "fields": {
+        "text": "Самокат едет отлично.",
+        "author": 1,
+        "ad": 6,
+        "created_at": "2026-05-16T17:23:34.074Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 12,
+    "fields": {
+        "text": "Батарея держит хорошо.",
+        "author": 3,
+        "ad": 6,
+        "created_at": "2026-05-16T17:23:34.076Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 13,
+    "fields": {
+        "text": "Фотоаппарат отличный.",
+        "author": 4,
+        "ad": 7,
+        "created_at": "2026-05-16T17:23:34.077Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 14,
+    "fields": {
+        "text": "Хороший комплект.",
+        "author": 5,
+        "ad": 7,
+        "created_at": "2026-05-16T17:23:34.079Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 15,
+    "fields": {
+        "text": "Очень удобное кресло.",
+        "author": 6,
+        "ad": 8,
+        "created_at": "2026-05-16T17:23:34.081Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 16,
+    "fields": {
+        "text": "Состояние хорошее.",
+        "author": 7,
+        "ad": 8,
+        "created_at": "2026-05-16T17:23:34.082Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 17,
+    "fields": {
+        "text": "Видеокарта работает без проблем.",
+        "author": 8,
+        "ad": 9,
+        "created_at": "2026-05-16T17:23:34.084Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 18,
+    "fields": {
+        "text": "Температуры отличные.",
+        "author": 9,
+        "ad": 9,
+        "created_at": "2026-05-16T17:23:34.085Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 19,
+    "fields": {
+        "text": "Очень приятный звук.",
+        "author": 10,
+        "ad": 10,
+        "created_at": "2026-05-16T17:23:34.087Z",
+        "rating": 5
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 20,
+    "fields": {
+        "text": "Гитара хорошо настроена.",
+        "author": 11,
+        "ad": 10,
+        "created_at": "2026-05-16T17:23:34.088Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 21,
+    "fields": {
+        "text": "Стол крепкий и удобный.",
+        "author": 1,
+        "ad": 11,
+        "created_at": "2026-05-16T17:23:34.089Z",
+        "rating": 4
+    }
+},
+{
+    "model": "ads.review",
+    "pk": 22,
+    "fields": {
+        "text": "Хороший вариант для офиса.",
+        "author": 2,
+        "ad": 11,
+        "created_at": "2026-05-16T17:23:34.091Z",
+        "rating": 5
+    }
+}
+]

@@ -53,7 +53,7 @@ class AdViewSet(ModelViewSet):
         остальные:
             только авторизованным
         """
-        if self.action == "list":
+        if self.action in ["list", "retrieve"]:
             return [AllowAny()]
 
         return [IsAuthenticated(), IsOwnerOrAdmin()]
